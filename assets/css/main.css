@@ -55,7 +55,7 @@ address {
 }
 
 html {
-  font-size: var(--font-size);
+  font-size: 12pt;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -593,18 +593,20 @@ textarea {
 .top {
   align-items: center;
   display: flex;
-  height: var(--navbar-height);
+  /* height: var(--navbar-height); */
   position: relative;
   padding: 0 var(--page-margin);
   -webkit-transition: background 0.5s ease;
   transition: background 0.5s ease;
   width: 100%;
   z-index: 2;
+  flex-direction: column;
 }
+
 @media all and (min-width: 56.25em) {
   .top {
     justify-content: space-between;
-    height: var(--navbar-height);
+    /* height: var(--navbar-height); */
   }
 }
 .top.sticky {
@@ -2171,4 +2173,91 @@ textarea {
   opacity: 1;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
+}
+
+
+
+
+
+
+
+.top img {
+  width: 113px;
+}
+
+.top .lbg-name {
+  font-family: Fira Sans Bold;
+  font-size: 28px;
+}
+
+.top .lbg-moto {
+  font-family: Didot W01 Italic;
+  font-size: 20px;
+}
+
+.top .lbg-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  /* width: 100%; */
+}
+
+.navbar .navbar__menu {
+  justify-content: space-between;
+}
+
+.navbar .navbar__menu li a {
+  font-size: 20px;
+  line-height: 41px;
+}
+
+.navbar .navbar__submenu li a {
+  padding: 0;
+}
+
+.navbar .navbar__menu > li:hover > a, .navbar .navbar__menu > li.active > a {
+  color: #0099ff;
+}
+
+.two-third-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.two-third-columns > :nth-child(1) {
+  flex-basis: 33%;
+}
+
+.two-third-columns > :nth-child(2) {
+  flex-basis: 66%;
+}
+
+.people-card {
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 2em;
+	background: #f8f8f8;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+.people-card > figure {
+	margin-top: 0;
+}
+
+.people-card h2 {
+	margin-top: 0;
+	font-size: 1.4rem;
+}
+
+.hero--noimage::after {
+  display: none;
+}
+
+.hero__content {
+  padding: 0;
 }
