@@ -1,0 +1,302 @@
+:root {
+  --font-size: 12pt;
+}
+
+.hero h1 {
+  margin-top: 0;
+}
+
+.page {
+  width: 1024px;
+  margin: 2rem auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  padding: 1rem;
+}
+
+.top {
+  padding-top: 1rem;
+  flex-direction: column;
+}
+
+.top img {
+  height: 200px;
+  transition: height ease 400ms;
+}
+
+/* 
+.top.sticky img {
+    height: 160px;
+} */
+
+.top .lbg-name {
+  font-family: FiraVa, sans-serif;
+  font-weight: 700: font-size: 28px;
+}
+
+.top .lbg-moto {
+  font-family: serif;
+  font-size: 20px;
+}
+
+.top .lbg-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  /* width: 100%; */
+}
+
+.navbar .navbar__menu {
+  justify-content: space-between;
+}
+
+.navbar .navbar__menu li a {
+  font-size: 20px;
+  line-height: 41px;
+}
+
+.navbar .navbar__submenu li a {
+  padding: 0;
+}
+
+.navbar .navbar__menu>li:hover>a,
+.navbar .navbar__menu>li.active>a,
+.navbar .navbar__menu>li.active-parent>a,
+.navbar .navbar__submenu>li.active>a {
+  color: #0099ff;
+}
+
+.two-third-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.two-third-columns> :nth-child(1) {
+  flex-basis: 33%;
+}
+
+.two-third-columns> :nth-child(2) {
+  flex-basis: 66%;
+}
+
+.people-card {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2em;
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.people-card>figure {
+  margin-top: 0;
+}
+
+.people-card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.hero--noimage::after {
+  display: none;
+}
+
+.hero__content {
+  padding: 0;
+}
+
+.msg--warning {
+  border-left-color: var(--warning-color);
+  background-color: #fde8e7;
+}
+
+.msg--info {
+  border-left-color: var(--info-color);
+  background-color: #e6f3fe;
+}
+
+.msg--highlight {
+  border-left-color: var(--highlight-color);
+  background-color: #fff9e5;
+}
+
+section.box {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+
+section.box h1 {
+  margin: 0;
+}
+
+section.box>ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section.box>ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.content__entry a.link-button {
+  color: white !important;
+  text-decoration: none !important;
+  background: #36afff;
+  display: inline-block;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 12em;
+  text-align: center;
+  margin: 0.25rem;
+  font-weight: bold;
+  transition: background ease 400ms;
+}
+
+.content__entry a.link-button:hover {
+  background: #268acd;
+}
+
+.page {
+  width: 1024px;
+  margin: 2rem auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  padding: 1rem;
+}
+
+.page:has(aside) {
+  display: flex;
+  gap: 2rem;
+}
+
+.page aside {
+  width: 18rem;
+  font-size: 90%;
+  background: #f8f8f8;
+  margin: -1rem 0 -1rem -1rem;
+  padding: 1rem;
+  border-right: 1px solid #f0f0f0;
+}
+
+.page aside ul {
+  list-style: none;
+  margin: 0;
+}
+
+.page aside li {
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.page aside li p:first-child {
+  margin-top: 0;
+}
+
+.page aside li h1 {
+  margin-top: 0;
+  font-size: 1.4em;
+  margin-bottom: 0.5rem;
+}
+
+.page aside time {
+	font-weight: bold;
+	color: #666;
+}
+
+.navbar .navbar__submenu {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 0 8px rgba(0 0 0 / 20%);
+  padding: 0;
+}
+
+.navbar .navbar__submenu li a {
+  padding: 0 0.85rem;
+  border-radius: 0;
+}
+
+.navbar .navbar__submenu li:hover>a,
+.navbar .navbar__submenu li:hover>span[aria-haspopup="true"] {
+  background-color: #0099ff;
+  color: white;
+}
+
+.footer {
+  border: none;
+  padding: 1rem 0;
+  margin: 4rem auto 0;
+  background: #333;
+  color: #e4e4e4;
+  max-width: none;
+}
+
+.footer a {
+  color: inherit;
+}
+
+*+.footer__social {
+  margin-top: 1rem;
+}
+
+.footer__social svg {
+  fill: #e4e4e4;
+}
+
+.top.sticky {
+  background: var(--page-bg);
+  position: sticky;
+  top: 0;
+  animation: slideDown2 0.5s cubic-bezier(0.17, 0.67, 0, 1) forwards;
+}
+
+@keyframes slideDown2 {
+  from {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.media-card {
+  overflow: hidden;
+  width: 370px;
+  background: white;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(0 0 0 / 20%);
+}
+
+.media-card img {
+  background: #f4f4f4;
+}
+
+.media-card h3 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.media-card p {
+  margin: 1rem;
+  text-align: justify;
+  hyphens: auto;
+}
