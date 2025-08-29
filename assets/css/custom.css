@@ -139,16 +139,38 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 }
 
 .people-card {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2em;
-  background: #f8f8f8;
-  padding: 1rem;
-  border-radius: 1rem;
+	display: flex;
+	gap: 4rem;
+	margin-bottom: 2em;
+	background: #f8f8f8;
+	padding: 1rem;
+	border-radius: 1rem;
+	position: relative;
+	min-height: 30ex;
+	overflow: hidden;
+  z-index: 0;
+  filter: grayscale();
 }
 
-.people-card>figure {
-  margin-top: 0;
+.people-card::before {
+	content: "";
+	background-color: var(--color, var(--dark));
+	inset: 0;
+	width: 8em;
+	display: block;
+	margin: -1rem 0 -1rem -1rem;
+}
+
+.people-card > svg,
+.people-card > img {
+	position: absolute;
+	max-width: 14em;
+	max-height: 14em;
+	clip-path: circle(40%);
+	top: 6em;
+	left: 6em;
+	transform: translate(-50%, -50%);
+	z-index: 2;
 }
 
 .people-card h2 {
