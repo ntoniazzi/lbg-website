@@ -149,7 +149,6 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 	min-height: 30ex;
 	overflow: hidden;
   z-index: 0;
-  filter: grayscale();
 }
 
 .people-card::before {
@@ -171,6 +170,7 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 	left: 6em;
 	transform: translate(-50%, -50%);
 	z-index: 2;
+  filter: grayscale();
 }
 
 .people-card h2 {
