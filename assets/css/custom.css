@@ -1,5 +1,61 @@
+@font-face {
+  font-family: "FiraSans";
+  src:
+    local("FiraSans"),
+    url(../dynamic/fonts/firasans-regular/firasans-regular.woff2) format("woff2")
+  ;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "FiraSans";
+  src:
+    local("FiraSans"),
+    url(../dynamic/fonts/firasans-regular/firasans-regular-italic.woff2) format("woff2")
+  ;
+  font-weight: 400;
+  font-style: italic;
+}
+/* @font-face {
+  font-family: "FiraSans";
+  src:
+    local("FiraSans"),
+    url(../dynamic/fonts/firasans-light/firasans-light.woff2) format("woff2")
+  ;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "FiraSans";
+  src:
+    local("FiraSans"),
+    url(../dynamic/fonts/firasans-medium/firasans-medium.woff2) format("woff2")
+  ;
+  font-weight: 500;
+} */
+@font-face {
+  font-family: "FiraSans";
+  src:
+    local("FiraSans"),
+    url(../dynamic/fonts/firasans-bold/firasans-bold.woff2) format("woff2")
+  ;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "FiraSans";
+  src:
+    local("FiraSans"),
+    url(../dynamic/fonts/firasans-bold/firasans-bold-italic.woff2) format("woff2")
+  ;
+  font-weight: 700;
+  font-style: italic;
+}
+
 :root {
   --font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar__menu li a {
+  font-family: FiraSans, sans-serif;
+  font-weight: 700;
 }
 
 .hero h1 {
@@ -180,6 +236,14 @@ section.box>ul li {
   gap: 2rem;
 }
 
+.page:has(aside) .entry-wrapper {
+  margin-top: 0;
+}
+
+.page:has(aside) .entry-wrapper h1 {
+  margin-top: 0;
+}
+
 .page aside {
   width: 18rem;
   font-size: 90%;
@@ -299,4 +363,38 @@ section.box>ul li {
   margin: 1rem;
   text-align: justify;
   hyphens: auto;
+}
+
+@media (max-width: 56.1875em) {
+  .page:has(aside) {
+    flex-direction: column;
+  }
+
+  .page aside {
+    order: 1;
+    width: auto;
+    column-count: 2;
+    margin: 2rem auto;
+  }
+}
+
+form button, form [type="button"], form [type="submit"] {
+	display: block;
+	border-radius: 0px;
+}
+
+form input, form textarea {
+	margin-bottom: 1rem;
+}
+
+form label {
+	font-weight: bold;
+	font-size: 85%;
+	margin: 0;
+}
+
+form {
+	break-inside: avoid;
+	display: flex;
+	flex-direction: column;
 }
