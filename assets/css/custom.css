@@ -85,17 +85,8 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 
 .top img {
   height: 200px;
+  margin-top: 1rem;
   transition: height ease 400ms;
-}
-
-.top .lbg-name {
-  font-family: FiraVa, sans-serif;
-  font-weight: 700: font-size: 28px;
-}
-
-.top .lbg-moto {
-  font-family: serif;
-  font-size: 20px;
 }
 
 .top .lbg-logo {
@@ -122,12 +113,6 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 .navbar .navbar__menu>li.active-parent>a,
 .navbar .navbar__submenu>li.active>a {
   color: #0099ff;
-}
-
-.two-third-columns {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
 }
 
 .two-third-columns> :nth-child(1) {
@@ -283,6 +268,7 @@ section.box>ul li {
 .page aside li {
   margin-bottom: 1rem;
   padding: 0;
+  break-inside: avoid;
 }
 
 .page aside li p:first-child {
@@ -387,7 +373,7 @@ section.box>ul li {
   hyphens: auto;
 }
 
-@media (max-width: 56.1875em) {
+@media (max-width: 1024px) {
   .page:has(aside) {
     flex-direction: column;
   }
@@ -396,7 +382,44 @@ section.box>ul li {
     order: 1;
     width: auto;
     column-count: 2;
-    margin: 2rem auto;
+    margin: 2rem 0;
+    border-right: none;
+  }
+
+  .page {
+    max-width: 100vw;
+    box-shadow: none;
+  }
+
+  .page aside ul li {
+    break-inside: avoid;
+  }
+}
+
+@media (max-width: 900px) and (prefers-color-scheme: dark) {
+  :root {
+    --bg-gradient: radial-gradient(circle at 85% 2em, #999, var(--page-bg) 5em);
+  }
+}
+
+@media (max-width: 900px) {
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .lbg-logo {
+    order: 4;
+  }
+
+  .lbg-logo img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .page aside {
+    column-count: 1;
   }
 }
 
