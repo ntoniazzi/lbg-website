@@ -52,11 +52,18 @@
 :root {
   --font-size: 12pt;
   --bg-gradient: none;
+  --link-color: #0099ff;
+  --link-color-hover: #205991;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-gradient: radial-gradient(circle at 50% 5em, #999, var(--page-bg) 11em);
+    --link-color: #ff6600; /* #FFC074 */
+    --link-color-hover: #ffab78;
+  }
+  
+  .logo img {
+    filter: hue-rotate(180deg) invert(100%);
   }
 }
 
@@ -80,20 +87,23 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 .top {
   padding-top: 1rem;
   flex-direction: column;
-  background-image: var(--bg-gradient);
 }
 
-.top img {
+.top .logo {
+  margin: 0;
+}
+
+.top .logo img {
   height: 200px;
   margin-top: 1rem;
   transition: height ease 400ms;
 }
 
-.top .lbg-logo {
+/* .top .lbg-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .navbar .navbar__menu {
   justify-content: space-between;
@@ -127,7 +137,7 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 	display: flex;
 	gap: 5rem;
 	margin-bottom: 2em;
-	background: var(--light);
+	background: var(--lighter);
 	padding: 1rem;
 	border-radius: 1rem;
 	position: relative;
@@ -139,7 +149,6 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 .people-card::before {
 	content: "";
 	background-color: var(--color, var(--dark));
-	inset: 0;
 	width: 8em;
 	display: block;
 	margin: -1rem 0 -1rem -1rem;
@@ -150,14 +159,15 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 .people-card > svg,
 .people-card > img {
 	position: absolute;
-	width: 14em;
-	height: 14em;
-	clip-path: circle(40%);
+	width: 10em;
+	height: 10em;
 	top: 6.4em;
 	left: 6.4em;
 	transform: translate(-50%, -50%);
 	z-index: 2;
   filter: grayscale();
+  border: 6px solid white;
+  border-radius: 1000px;
 }
 
 .people-card h2 {
@@ -328,7 +338,7 @@ section.box>ul li {
 }
 
 .top.sticky {
-  background: var(--page-bg) var(--bg-gradient);
+  background: var(--page-bg);
   position: sticky;
   top: 0;
   animation: slideDown2 0.5s cubic-bezier(0.17, 0.67, 0, 1) forwards;
@@ -347,14 +357,27 @@ section.box>ul li {
 }
 
 .flexbox {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+
+.flexbox.partners {
+	gap: 0.5em;
+	margin: 2em 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.flexbox.partners img {
+  border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
 }
 
 .media-card {
   overflow: hidden;
-  width: 370px;
+  width: 100%;
   background: var(--page-bg);
   border-radius: 0.6rem;
   border: 1px solid var(--light);
@@ -362,6 +385,7 @@ section.box>ul li {
 
 .media-card img {
   background: #f8f8f8;
+  width: 100%;
 }
 
 .media-card h3 {
@@ -396,11 +420,9 @@ section.box>ul li {
   .page aside ul li {
     break-inside: avoid;
   }
-}
 
-@media (max-width: 900px) and (prefers-color-scheme: dark) {
-  :root {
-    --bg-gradient: radial-gradient(circle at 85% 2em, #999, var(--page-bg) 5em);
+  .flexbox.partners {
+  	grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -408,24 +430,42 @@ section.box>ul li {
   .top {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
   }
 
-  .lbg-logo {
+  .top .logo {
     order: 4;
   }
 
-  .lbg-logo img {
-    height: 80px;
+  .top .logo img {
+    height: var(--navbar-height);
+    margin: 0;
+    padding: 0;
+  }
+
+  .people-card {
+    flex-direction: column;
+    margin: -1rem -1rem 0 -1rem;
+    height: 8em;
+    width: auto;
+  }
+
+  .people-card > img, .people-card > svg {
+    left: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .flexbox,
+  .flexbox.partners {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 500px) {
   .page aside {
     column-count: 1;
-  }
-
-  .people-card {
-    flex-direction: column;
   }
 }
 
@@ -456,7 +496,7 @@ form label {
 	padding: 6em 2em 2em;
 	border: 1px solid var(--light);
 	background: var(--lighter);
-	margin: 2em;
+	margin: 3em 2em 2em 2em;
 	position: relative;
 }
 
@@ -464,7 +504,7 @@ form label {
 	content: "✉️";
 	font-size: 4em;
 	position: absolute;
-	top: 0;
+	top: 5%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	background: var(--lighter);
