@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 
 .people-card {
 	display: flex;
-	gap: 4rem;
+	gap: 5rem;
 	margin-bottom: 2em;
 	background: var(--light);
 	padding: 1rem;
@@ -143,16 +143,18 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 	width: 8em;
 	display: block;
 	margin: -1rem 0 -1rem -1rem;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .people-card > svg,
 .people-card > img {
 	position: absolute;
-	max-width: 14em;
-	max-height: 14em;
+	width: 14em;
+	height: 14em;
 	clip-path: circle(40%);
-	top: 6em;
-	left: 6em;
+	top: 6.4em;
+	left: 6.4em;
 	transform: translate(-50%, -50%);
 	z-index: 2;
   filter: grayscale();
@@ -420,6 +422,10 @@ section.box>ul li {
 @media (max-width: 500px) {
   .page aside {
     column-count: 1;
+  }
+
+  .people-card {
+    flex-direction: column;
   }
 }
 
