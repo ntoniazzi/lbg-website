@@ -90,7 +90,7 @@
   }
 }
 
-::backdrop {
+dialog::backdrop {
   background: rbga(0 0 0 20%);
   backdrop-filter: blur(5px);
 }
@@ -103,6 +103,8 @@ dialog {
 	top: 50%;
 	padding: 2rem;
 	border: 1px solid var(--dark);
+  pointer-events: all;
+  width: max-content;
 }
 
 dialog h1 {
