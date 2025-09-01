@@ -54,12 +54,35 @@
   --bg-gradient: none;
   --link-color: #0099ff;
   --link-color-hover: #205991;
+
+  --warning-color: #FB6762;
+  --warning-bg-color: #fde8e7;
+  
+  --info-color: #5b9ed5;
+  --info-bg-color: #e9f1f9;
+
+  --highlight-color: #F6DC90;
+  --highlight-bg-color: #fff9e5;
+
+  --button-bg-color: #36afff;
+  --button-hover-bg-color: #268acd;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --link-color: #ff6600; /* #FFC074 */
     --link-color-hover: #ffab78;
+    --warning-color: #883d38;
+    --warning-bg-color: #44221f;
+
+    --info-color: #446f94;
+    --info-bg-color: #202e3a;
+
+    --highlight-color: #a89865;
+    --highlight-bg-color: #423b2a;
+
+    --button-bg-color: #2b6089;
+    --button-hover-bg-color: #268acd;
   }
   
   .logo img {
@@ -70,6 +93,29 @@
 ::backdrop {
   background: rbga(0 0 0 20%);
   backdrop-filter: blur(5px);
+}
+
+dialog {
+  color: var(--text-color);
+  background: var(--page-bg);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	padding: 2rem;
+	border: 1px solid var(--dark);
+}
+
+dialog h1 {
+	margin-top: 0;
+}
+
+dialog button {
+	margin: 1rem auto 0;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+  pointer-events: none;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar__menu li a {
@@ -103,12 +149,6 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
   margin-top: 1rem;
   transition: height ease 400ms;
 }
-
-/* .top .lbg-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
 .navbar .navbar__menu {
   justify-content: space-between;
@@ -190,17 +230,17 @@ h1, h2, h3, h4, h5, h6, .navbar__menu li a {
 
 .msg--warning {
   border-left-color: var(--warning-color);
-  background-color: #fde8e7;
+  background-color: var(--warning-bg-color);
 }
 
 .msg--info {
   border-left-color: var(--info-color);
-  background-color: #e6f3fe;
+  background-color: var(--info-bg-color);
 }
 
 .msg--highlight {
   border-left-color: var(--highlight-color);
-  background-color: #fff9e5;
+  background-color: var(--highlight-bg-color);
 }
 
 section.box {
@@ -233,7 +273,7 @@ section.box>ul li {
 .content__entry a.link-button {
   color: white !important;
   text-decoration: none !important;
-  background: #36afff;
+  background: var(--button-bg-color);
   display: inline-block;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
@@ -245,7 +285,7 @@ section.box>ul li {
 }
 
 .content__entry a.link-button:hover {
-  background: #268acd;
+  background: var(--button-hover-bg-color);
 }
 
 .page {
@@ -451,6 +491,9 @@ section.box>ul li {
 
   .people-card {
     flex-direction: column;
+  }
+
+  .people-card::before {
     margin: -1rem -1rem 0 -1rem;
     height: 8em;
     width: auto;
@@ -522,19 +565,4 @@ form label {
 	line-height: 1.8em;
 }
 
-dialog {
-	left: 50%;
-	transform: translate(-50%, -50%);
-	top: 50%;
-	padding: 2rem;
-	border: 1px solid var(--dark);
-	background: var(--page-bg);
-}
 
-dialog h1 {
-	margin-top: 0;
-}
-
-dialog button {
-	margin: 1rem auto 0;
-}
