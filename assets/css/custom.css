@@ -68,34 +68,6 @@
   --button-hover-bg-color: #268acd;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --link-color: #ff6600; /* #FFC074 */
-    --link-color-hover: #ffab78;
-    --warning-color: #883d38;
-    --warning-bg-color: #44221f;
-
-    --info-color: #446f94;
-    --info-bg-color: #202e3a;
-
-    --highlight-color: #a89865;
-    --highlight-bg-color: #423b2a;
-
-    --button-bg-color: #2b6089;
-    --button-hover-bg-color: #268acd;
-
-    --text-color: #e4e4e4;
-  }
-  
-  .logo img {
-    filter: hue-rotate(180deg) invert(100%);
-  }
-
-  .page aside {
-    mix-blend-mode: lighten;
-  }
-}
-
 dialog::backdrop {
   background: rbga(0 0 0 20%);
   backdrop-filter: blur(5px);
@@ -577,3 +549,30 @@ form label {
 }
 
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-color: #ff6600; /* #FFC074 */
+    --link-color-hover: #ffab78;
+    --warning-color: #883d38;
+    --warning-bg-color: #44221f;
+
+    --info-color: #446f94;
+    --info-bg-color: #202e3a;
+
+    --highlight-color: #a89865;
+    --highlight-bg-color: #423b2a;
+
+    --button-bg-color: #2b6089;
+    --button-hover-bg-color: #268acd;
+
+    --text-color: #e4e4e4;
+  }
+  
+  .logo img {
+    filter: hue-rotate(180deg) invert(100%);
+  }
+
+  .page aside {
+    mix-blend-mode: lighten;
+  }
+}
