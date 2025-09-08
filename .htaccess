@@ -1,0 +1,3 @@
+Header Set X-Content-Type-Options nosniff
+Header Set Strict-Transport-Security max-age=31536000
+Header Set Content-Security-Policy "default-src 'self'; iframe-src 'self' https://www.youtube-nocookie.com"
