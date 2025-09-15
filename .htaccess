@@ -14,3 +14,6 @@ RewriteEngine On
 
 RewriteCond %{HTTP_HOST} ^lavalbournygym.com
 RewriteRule ^(.*)$  https://www.lavalbournygym.com/$1 [R=301,L,QSA]
+
+ErrorDocument 404 /page-introuvable/index.html
+
