@@ -1,3 +1,16 @@
 Header Set X-Content-Type-Options nosniff
 Header Set Strict-Transport-Security max-age=31536000
-Header Set Content-Security-Policy "default-src 'self'; iframe-src 'self' https://www.youtube-nocookie.com"
+Header Set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-src 'self' https://www.youtube-nocookie.com https://www.openstreetmap.org; connect-src 'self' https://submit-form.com"
+
+Redirect permanent "/favicon.ico"  "/media/website/favicon-128.png"
+Redirect permanent "/inscriptions" "/infos-pratiques/inscriptions-et-reinscriptions-pour-la-saison-20252026"
+Redirect permanent "/nos-salles"   "/infos-pratiques/nos-salles-dentrainement"
+Redirect permanent "/boutique"     "/la-boutique"
+Redirect permanent "/nos-activits" "/le-club/nos-activites"
+Redirect permanent "/contacts"     "/infos-pratiques/contacts"
+Redirect permanent "/actualits"    "/actualites"
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^lavalbournygym.com
+RewriteRule ^(.*)$  https://www.lavalbournygym.com/$1 [R=301,L,QSA]
