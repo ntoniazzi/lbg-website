@@ -1,5 +1,17 @@
 [
     {
+        "id": 1,
+        "nom": "Cueillette Duverger",
+        "formule": 1,
+        "description": "",
+        "url": "https://www.lacueilletteduverger.fr/",
+        "raison": "",
+        "adresse": "Le Riblay",
+        "code-postal": 53260,
+        "ville": "Entrammes",
+        "image": "/partenaires/01 - Cueillette Duverger.jpg"
+    },
+    {
         "id": 3,
         "nom": "L'Atelier Gourmand",
         "formule": 1,
